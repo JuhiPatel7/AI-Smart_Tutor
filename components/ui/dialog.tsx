@@ -1,35 +1,62 @@
-'use client'
+// Dialog modal component system from Radix UI
+// Client-side component for managing modal dialogs
+// Provides composable dialog structure with trigger, content, overlay, title, and close components
 
+'use client'
 import * as React from 'react'
 import * as DialogPrimitive from '@radix-ui/react-dialog'
 import { XIcon } from 'lucide-react'
-
 import { cn } from '@/lib/utils'
 
+/**
+ * Root Dialog component - manages dialog state
+ * @param {React.ComponentProps<typeof DialogPrimitive.Root>} props - Radix UI Dialog.Root props
+ * @returns {React.ReactElement} Dialog root wrapper
+ */
 function Dialog({
   ...props
 }: React.ComponentProps<typeof DialogPrimitive.Root>) {
   return <DialogPrimitive.Root data-slot="dialog" {...props} />
 }
 
+/**
+ * Dialog trigger component - button or element that opens the dialog
+ * @param {React.ComponentProps<typeof DialogPrimitive.Trigger>} props - Radix UI Dialog.Trigger props
+ * @returns {React.ReactElement} Dialog trigger element
+ */
 function DialogTrigger({
   ...props
 }: React.ComponentProps<typeof DialogPrimitive.Trigger>) {
   return <DialogPrimitive.Trigger data-slot="dialog-trigger" {...props} />
 }
 
+/**
+ * Dialog portal component - renders dialog content outside DOM hierarchy
+ * @param {React.ComponentProps<typeof DialogPrimitive.Portal>} props - Radix UI Dialog.Portal props
+ * @returns {React.ReactElement} Dialog portal wrapper
+ */
 function DialogPortal({
   ...props
 }: React.ComponentProps<typeof DialogPrimitive.Portal>) {
   return <DialogPrimitive.Portal data-slot="dialog-portal" {...props} />
 }
 
+/**
+ * Dialog close component - button or trigger to close the dialog
+ * @param {React.ComponentProps<typeof DialogPrimitive.Close>} props - Radix UI Dialog.Close props
+ * @returns {React.ReactElement} Dialog close element
+ */
 function DialogClose({
   ...props
 }: React.ComponentProps<typeof DialogPrimitive.Close>) {
   return <DialogPrimitive.Close data-slot="dialog-close" {...props} />
 }
 
+/**
+ * Dialog overlay component - semi-transparent backdrop behind dialog
+ * @param {React.ComponentProps<typeof DialogPrimitive.Overlay>} props - Radix UI Dialog.Overlay props
+ * @returns {React.ReactElement} Styled dialog overlay
+ */
 function DialogOverlay({
   className,
   ...props
@@ -46,6 +73,13 @@ function DialogOverlay({
   )
 }
 
+/**
+ * Dialog content component - main content container
+ * Includes optional close button and handles overlay
+ * @param {React.ComponentProps<typeof DialogPrimitive.Content> & {showCloseButton?: boolean}} props
+ * @param {boolean} [props.showCloseButton=true] - Show close button in top-right
+ * @returns {React.ReactElement} Complete dialog with content
+ */
 function DialogContent({
   className,
   children,
@@ -80,6 +114,11 @@ function DialogContent({
   )
 }
 
+/**
+ * Dialog header component - top section for title and description
+ * @param {React.ComponentProps<'div'>} props - Standard div HTML attributes
+ * @returns {React.ReactElement} Styled dialog header
+ */
 function DialogHeader({ className, ...props }: React.ComponentProps<'div'>) {
   return (
     <div
@@ -90,6 +129,11 @@ function DialogHeader({ className, ...props }: React.ComponentProps<'div'>) {
   )
 }
 
+/**
+ * Dialog footer component - bottom section typically for action buttons
+ * @param {React.ComponentProps<'div'>} props - Standard div HTML attributes
+ * @returns {React.ReactElement} Styled dialog footer
+ */
 function DialogFooter({ className, ...props }: React.ComponentProps<'div'>) {
   return (
     <div
@@ -103,6 +147,11 @@ function DialogFooter({ className, ...props }: React.ComponentProps<'div'>) {
   )
 }
 
+/**
+ * Dialog title component - prominent heading for dialog
+ * @param {React.ComponentProps<typeof DialogPrimitive.Title>} props - Radix UI Dialog.Title props
+ * @returns {React.ReactElement} Styled dialog title
+ */
 function DialogTitle({
   className,
   ...props
@@ -116,6 +165,11 @@ function DialogTitle({
   )
 }
 
+/**
+ * Dialog description component - secondary text in dialog
+ * @param {React.ComponentProps<typeof DialogPrimitive.Description>} props - Radix UI Dialog.Description props
+ * @returns {React.ReactElement} Styled dialog description
+ */
 function DialogDescription({
   className,
   ...props
