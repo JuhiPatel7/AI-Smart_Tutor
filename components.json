@@ -1,4 +1,23 @@
 {
+  "_comments": {
+    "$schema": "Points to the shadcn/ui JSON schema for validation and autocomplete",
+    "style": "UI component style preset - 'new-york' is a modern design variant",
+    "rsc": "React Server Components - enables server-side component rendering for better performance",
+    "tsx": "Use TypeScript (.tsx) files instead of JavaScript (.jsx) when generating components",
+    "tailwind": "Tailwind CSS configuration - specifies how to integrate Tailwind with components",
+    "tailwind.config": "Path to Tailwind config file (empty uses default)",
+    "tailwind.css": "Path to global CSS file for Tailwind directives",
+    "tailwind.baseColor": "Base color theme - 'neutral' uses gray colors as foundation",
+    "tailwind.cssVariables": "Use CSS variables for theme colors instead of hardcoded values",
+    "tailwind.prefix": "Optional prefix for Tailwind utility classes (empty means no prefix)",
+    "aliases": "Path aliases for clean imports - @/components maps to components folder",
+    "aliases.components": "Alias for component directory - allows 'import from @/components'",
+    "aliases.utils": "Alias for utility functions - allows 'import from @/lib/utils'",
+    "aliases.ui": "Alias for UI component library - allows 'import from @/components/ui'",
+    "aliases.lib": "Alias for lib directory - allows 'import from @/lib'",
+    "aliases.hooks": "Alias for custom React hooks - allows 'import from @/hooks'",
+    "iconLibrary": "Icon library used - 'lucide' provides SVG icons for components"
+  },
   "$schema": "https://ui.shadcn.com/schema.json",
   "style": "new-york",
   "rsc": true,
