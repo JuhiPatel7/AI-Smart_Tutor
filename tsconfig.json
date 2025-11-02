@@ -1,4 +1,24 @@
 {
+  "_comments": {
+    "compilerOptions": "TypeScript compiler settings that control how TS code is compiled",
+    "lib": "List of built-in JS libraries available - DOM, DOM iteration, and ES Next features",
+    "allowJs": "Allow JavaScript files to be compiled alongside TypeScript",
+    "target": "ES6 - the JavaScript version to compile TypeScript to",
+    "skipLibCheck": "Skip type checking of declaration files for faster compilation",
+    "strict": "Enable all strict type checking options for better type safety",
+    "noEmit": "Don't emit JavaScript files, only type check (Next.js handles JS generation)",
+    "esModuleInterop": "Enable compatibility between CommonJS and ES modules",
+    "module": "esnext - use ES module syntax for better tree-shaking and bundling",
+    "moduleResolution": "bundler - use bundler strategy for resolving module imports",
+    "resolveJsonModule": "Allow importing JSON files directly in TypeScript",
+    "isolatedModules": "Ensure each file can be transpiled independently",
+    "jsx": "preserve - don't transform JSX, let Next.js handle it",
+    "incremental": "Enable incremental compilation for faster subsequent builds",
+    "plugins": "TypeScript plugins - 'next' plugin integrates Next.js specific type features",
+    "paths": "Path aliases - '@/*' maps to project root for cleaner imports",
+    "include": "Files to include in compilation - TypeScript and TSX files",
+    "exclude": "Folders to exclude - node_modules are pre-compiled dependencies"
+  },
   "compilerOptions": {
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
