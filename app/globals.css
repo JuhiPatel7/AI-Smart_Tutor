@@ -1,69 +1,127 @@
+/* Import Tailwind CSS utility classes and components */
 @import 'tailwindcss';
+/* Import animation utilities from the tw-animate-css library */
 @import 'tw-animate-css';
 
+/* Define a custom variant for dark mode */
+/* This applies dark mode styles when a .dark class is present on ancestors */
 @custom-variant dark (&:is(.dark *));
 
+/* Root theme variables for light mode (default) */
+/* Uses OKLCH color model for perceptually uniform colors */
 :root {
+  /* Background color - white for light mode */
   --background: oklch(1 0 0);
+  /* Foreground text color - dark for light mode */
   --foreground: oklch(0.145 0 0);
+  /* Card/panel background color */
   --card: oklch(1 0 0);
+  /* Text color on cards */
   --card-foreground: oklch(0.145 0 0);
+  /* Popover/dropdown background */
   --popover: oklch(1 0 0);
+  /* Text color on popovers */
   --popover-foreground: oklch(0.145 0 0);
+  /* Primary brand color - dark */
   --primary: oklch(0.205 0 0);
+  /* Text color on primary buttons */
   --primary-foreground: oklch(0.985 0 0);
+  /* Secondary color - light gray */
   --secondary: oklch(0.97 0 0);
+  /* Text color on secondary elements */
   --secondary-foreground: oklch(0.205 0 0);
+  /* Muted/disabled element color */
   --muted: oklch(0.97 0 0);
+  /* Text color on muted elements */
   --muted-foreground: oklch(0.556 0 0);
+  /* Accent color for highlights */
   --accent: oklch(0.97 0 0);
+  /* Text color on accented elements */
   --accent-foreground: oklch(0.205 0 0);
+  /* Destructive action color - red/orange */
   --destructive: oklch(0.577 0.245 27.325);
+  /* Text color for destructive actions */
   --destructive-foreground: oklch(0.577 0.245 27.325);
+  /* Border color */
   --border: oklch(0.922 0 0);
+  /* Input field background */
   --input: oklch(0.922 0 0);
+  /* Focus ring color */
   --ring: oklch(0.708 0 0);
+  /* Chart colors - 5 distinct colors for data visualization */
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
+  /* Border radius for rounded corners */
   --radius: 0.625rem;
+  /* Sidebar background color */
   --sidebar: oklch(0.985 0 0);
+  /* Text color in sidebar */
   --sidebar-foreground: oklch(0.145 0 0);
+  /* Primary color in sidebar */
   --sidebar-primary: oklch(0.205 0 0);
+  /* Text on primary sidebar elements */
   --sidebar-primary-foreground: oklch(0.985 0 0);
+  /* Accent color in sidebar */
   --sidebar-accent: oklch(0.97 0 0);
+  /* Text on accented sidebar elements */
   --sidebar-accent-foreground: oklch(0.205 0 0);
+  /* Border color in sidebar */
   --sidebar-border: oklch(0.922 0 0);
+  /* Focus ring color in sidebar */
   --sidebar-ring: oklch(0.708 0 0);
 }
 
+/* Dark mode theme variables */
+/* Inverted colors for dark backgrounds */
 .dark {
+  /* Dark background - very dark gray/black */
   --background: oklch(0.145 0 0);
+  /* Light foreground - nearly white for text */
   --foreground: oklch(0.985 0 0);
+  /* Dark card background */
   --card: oklch(0.145 0 0);
+  /* Light text on dark cards */
   --card-foreground: oklch(0.985 0 0);
+  /* Dark popover background */
   --popover: oklch(0.145 0 0);
+  /* Light text on dark popovers */
   --popover-foreground: oklch(0.985 0 0);
+  /* Primary color - light in dark mode */
   --primary: oklch(0.985 0 0);
+  /* Dark text on light primary buttons */
   --primary-foreground: oklch(0.205 0 0);
+  /* Secondary color - dark gray */
   --secondary: oklch(0.269 0 0);
+  /* Light text on secondary elements */
   --secondary-foreground: oklch(0.985 0 0);
+  /* Muted element color */
   --muted: oklch(0.269 0 0);
+  /* Light text on muted elements */
   --muted-foreground: oklch(0.708 0 0);
+  /* Accent color in dark mode */
   --accent: oklch(0.269 0 0);
+  /* Light text on accented elements */
   --accent-foreground: oklch(0.985 0 0);
+  /* Destructive action color - adjusted for dark mode */
   --destructive: oklch(0.396 0.141 25.723);
+  /* Light text for destructive actions */
   --destructive-foreground: oklch(0.637 0.237 25.331);
+  /* Border color in dark mode */
   --border: oklch(0.269 0 0);
+  /* Input field background in dark mode */
   --input: oklch(0.269 0 0);
+  /* Focus ring color in dark mode */
   --ring: oklch(0.439 0 0);
+  /* Chart colors - adjusted for dark mode visibility */
   --chart-1: oklch(0.488 0.243 264.376);
   --chart-2: oklch(0.696 0.17 162.48);
   --chart-3: oklch(0.769 0.188 70.08);
   --chart-4: oklch(0.627 0.265 303.9);
   --chart-5: oklch(0.645 0.246 16.439);
+  /* Sidebar colors in dark mode */
   --sidebar: oklch(0.205 0 0);
   --sidebar-foreground: oklch(0.985 0 0);
   --sidebar-primary: oklch(0.488 0.243 264.376);
@@ -74,9 +132,14 @@
   --sidebar-ring: oklch(0.439 0 0);
 }
 
+/* Theme configuration using Tailwind's @theme directive */
+/* Maps CSS variables to Tailwind theme tokens */
 @theme inline {
+  /* Font families */
   --font-sans: 'Geist', 'Geist Fallback';
   --font-mono: 'Geist Mono', 'Geist Mono Fallback';
+  
+  /* Color mappings - link CSS variables to Tailwind colors */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -96,15 +159,18 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
+  /* Chart colors */
   --color-chart-1: var(--chart-1);
   --color-chart-2: var(--chart-2);
   --color-chart-3: var(--chart-3);
   --color-chart-4: var(--chart-4);
   --color-chart-5: var(--chart-5);
+  /* Border radius scale */
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+  /* Sidebar theme colors */
   --color-sidebar: var(--sidebar);
   --color-sidebar-foreground: var(--sidebar-foreground);
   --color-sidebar-primary: var(--sidebar-primary);
@@ -115,11 +181,16 @@
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
+/* Base layer styles - applied to all elements */
 @layer base {
+  /* Global element styles */
   * {
+    /* Apply border color from theme and add ring color for focus */
     @apply border-border outline-ring/50;
   }
+  /* Body element styling */
   body {
+    /* Set background and text colors from theme variables */
     @apply bg-background text-foreground;
   }
 }
