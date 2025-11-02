@@ -1,4 +1,37 @@
 {
+  "_comments": {
+    "name": "Project name identifier",
+    "version": "Semantic versioning - major.minor.patch format",
+    "private": "Prevents accidental publishing to npm registry",
+    "scripts": {
+      "build": "Builds production-ready Next.js application",
+      "dev": "Starts development server with hot reload",
+      "lint": "Runs ESLint to check code quality",
+      "start": "Starts production Next.js server"
+    },
+    "dependencies": {
+      "@ai-sdk/openai": "Vercel AI SDK for OpenAI integration",
+      "@supabase/supabase-js": "Supabase client for authentication and database",
+      "next": "React framework for production applications",
+      "react": "UI library for building components",
+      "tailwindcss": "Utility-first CSS framework",
+      "zod": "TypeScript-first schema validation library",
+      "react-hook-form": "Performant form state management",
+      "@radix-ui/*": "Unstyled, accessible component library - multiple UI components",
+      "recharts": "Composable charting library for React",
+      "lucide-react": "Beautiful icon library",
+      "sonner": "Toast notification library",
+      "date-fns": "Date utility library",
+      "ai": "Vercel AI SDK core library for LLM integration"
+    },
+    "devDependencies": {
+      "typescript": "Adds type safety to JavaScript",
+      "@types/*": "Type definitions for libraries",
+      "tailwindcss": "Development version for CSS processing",
+      "postcss": "CSS transformation tool with plugins",
+      "@tailwindcss/postcss": "Latest Tailwind CSS v4 with PostCSS"
+    }
+  },
   "name": "my-project",
   "version": "0.1.0",
   "private": true,
