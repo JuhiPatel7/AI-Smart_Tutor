@@ -1,7 +1,16 @@
-import * as React from 'react'
+// Card component system for layout and content organization
+// Provides composable card structure with header, title, description, content, action, and footer sections
+// All components are div-based with flexible styling through Tailwind CSS and class composition
 
+import * as React from 'react'
 import { cn } from '@/lib/utils'
 
+/**
+ * Root Card component - main container for card content
+ * Provides card background, border, shadow, and gap between sections
+ * @param {React.ComponentProps<'div'>} props - Standard div HTML attributes
+ * @returns {React.ReactElement} Styled card container
+ */
 function Card({ className, ...props }: React.ComponentProps<'div'>) {
   return (
     <div
@@ -15,6 +24,13 @@ function Card({ className, ...props }: React.ComponentProps<'div'>) {
   )
 }
 
+/**
+ * CardHeader component - header section of the card
+ * Uses CSS container queries for responsive behavior
+ * Supports grid layout with automatic row sizing
+ * @param {React.ComponentProps<'div'>} props - Standard div HTML attributes
+ * @returns {React.ReactElement} Styled card header container
+ */
 function CardHeader({ className, ...props }: React.ComponentProps<'div'>) {
   return (
     <div
@@ -28,6 +44,12 @@ function CardHeader({ className, ...props }: React.ComponentProps<'div'>) {
   )
 }
 
+/**
+ * CardTitle component - display prominent title within the card
+ * Typically placed in CardHeader for consistent layout
+ * @param {React.ComponentProps<'div'>} props - Standard div HTML attributes
+ * @returns {React.ReactElement} Styled card title
+ */
 function CardTitle({ className, ...props }: React.ComponentProps<'div'>) {
   return (
     <div
@@ -38,6 +60,12 @@ function CardTitle({ className, ...props }: React.ComponentProps<'div'>) {
   )
 }
 
+/**
+ * CardDescription component - display secondary text or descriptive content
+ * Typically used in CardHeader for supplementary information
+ * @param {React.ComponentProps<'div'>} props - Standard div HTML attributes
+ * @returns {React.ReactElement} Styled card description text
+ */
 function CardDescription({ className, ...props }: React.ComponentProps<'div'>) {
   return (
     <div
@@ -48,6 +76,13 @@ function CardDescription({ className, ...props }: React.ComponentProps<'div'>) {
   )
 }
 
+/**
+ * CardAction component - action container positioned in the header
+ * Auto-positions to top-right via grid layout in CardHeader
+ * Ideal for action buttons or icons
+ * @param {React.ComponentProps<'div'>} props - Standard div HTML attributes
+ * @returns {React.ReactElement} Styled card action container
+ */
 function CardAction({ className, ...props }: React.ComponentProps<'div'>) {
   return (
     <div
@@ -61,6 +96,12 @@ function CardAction({ className, ...props }: React.ComponentProps<'div'>) {
   )
 }
 
+/**
+ * CardContent component - main content area of the card
+ * Provides standard horizontal padding
+ * @param {React.ComponentProps<'div'>} props - Standard div HTML attributes
+ * @returns {React.ReactElement} Styled card content container
+ */
 function CardContent({ className, ...props }: React.ComponentProps<'div'>) {
   return (
     <div
@@ -71,6 +112,12 @@ function CardContent({ className, ...props }: React.ComponentProps<'div'>) {
   )
 }
 
+/**
+ * CardFooter component - footer section at the bottom of the card
+ * Typically used for actions, buttons, or additional information
+ * @param {React.ComponentProps<'div'>} props - Standard div HTML attributes
+ * @returns {React.ReactElement} Styled card footer container
+ */
 function CardFooter({ className, ...props }: React.ComponentProps<'div'>) {
   return (
     <div
