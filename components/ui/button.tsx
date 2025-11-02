@@ -1,9 +1,15 @@
+// Button component from Radix UI
+// A reusable, styled button component with multiple variants and sizes
+// Supports polymorphic rendering via asChild prop for flexible composition
+
 import * as React from 'react'
 import { Slot } from '@radix-ui/react-slot'
 import { cva, type VariantProps } from 'class-variance-authority'
-
 import { cn } from '@/lib/utils'
 
+// Button style variants using class-variance-authority (CVA)
+// Defines default styling and multiple visual variants (default, destructive, outline, secondary, ghost, link)
+// Also includes multiple size options (default, sm, lg, icon variants)
 const buttonVariants = cva(
   "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
   {
@@ -36,6 +42,16 @@ const buttonVariants = cva(
   },
 )
 
+/**
+ * Button component with polymorphic rendering
+ * Supports variant and size customization
+ * Can render as any HTML element when asChild prop is used
+ * @param {Object} props - Component props
+ * @param {React.ComponentProps<'button'>} props - Standard button HTML attributes
+ * @param {VariantProps<typeof buttonVariants>} props - Button variant and size options
+ * @param {boolean} [props.asChild=false] - If true, renders as Radix Slot (for polymorphism)
+ * @returns {React.ReactElement} Rendered button component
+ */
 function Button({
   className,
   variant,
@@ -47,7 +63,6 @@ function Button({
     asChild?: boolean
   }) {
   const Comp = asChild ? Slot : 'button'
-
   return (
     <Comp
       data-slot="button"
