@@ -1,7 +1,19 @@
-import * as React from 'react'
+// Input field component for text and file input
+// Provides styled input element with support for file uploads and various input types
+// Includes focus states, disabled states, validation states, and dark mode support
 
+import * as React from 'react'
 import { cn } from '@/lib/utils'
 
+/**
+ * Input component - flexible form input field
+ * Supports all standard HTML input types
+ * Includes built-in styling for focus, disabled, and error states
+ * Has special file input styling with accessible file picker appearance
+ * @param {React.ComponentProps<'input'>} props - Standard HTML input attributes
+ * @param {string} [props.type='text'] - HTML input type (text, email, password, file, etc.)
+ * @returns {React.ReactElement} Styled input element
+ */
 function Input({ className, type, ...props }: React.ComponentProps<'input'>) {
   return (
     <input
